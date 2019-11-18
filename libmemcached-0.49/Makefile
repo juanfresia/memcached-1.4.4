@@ -659,17 +659,17 @@ DIST_ARCHIVES = $(distdir).tar.gz
 GZIP_ENV = --best
 distuninstallcheck_listfiles = find . -type f -print
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /home/vagrant/memcached/memcached-127/libmemcached-0.49/config/missing --run aclocal-1.11
-AMTAR = ${SHELL} /home/vagrant/memcached/memcached-127/libmemcached-0.49/config/missing --run tar
+ACLOCAL = ${SHELL} /home/vagrant/memcached-127/libmemcached-0.49/config/missing --run aclocal-1.11
+AMTAR = ${SHELL} /home/vagrant/memcached-127/libmemcached-0.49/config/missing --run tar
 AM_CFLAGS = -pthread -pipe  -O2 -fvisibility=hidden  -pedantic -Wall -Wundef -Wshadow  -fdiagnostics-show-option -floop-parallelize-all  -Wstrict-aliasing -Wswitch-enum  -Wextra -Wformat -Wno-format-nonliteral -Wno-format-security -Wstrict-prototypes -Wmissing-prototypes -Wredundant-decls -Wmissing-declarations -Wcast-align -Wswitch-default -Wswitch-enum -Wwrite-strings -Wlogical-op   
 AM_CPPFLAGS = -I$(top_srcdir) -I$(top_builddir) -g 
 AM_CXXFLAGS = -pthread -pipe -std=gnu++98  -O2 -fvisibility=hidden -fvisibility-inlines-hidden  -pedantic -Wall -Wundef -Wshadow  -fdiagnostics-show-option -floop-parallelize-all  -Wstrict-aliasing -Wswitch-enum  -Wextra -Wformat -Wno-format-nonliteral -Wno-format-security -Woverloaded-virtual -Wnon-virtual-dtor -Wctor-dtor-privacy -Wno-long-long  -Wmissing-declarations -Wframe-larger-than=32768 -Wredundant-decls   
 AM_DEFAULT_VERBOSITY = 0
 AM_LDFLAGS = 
 AR = ar
-AUTOCONF = ${SHELL} /home/vagrant/memcached/memcached-127/libmemcached-0.49/config/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/vagrant/memcached/memcached-127/libmemcached-0.49/config/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/vagrant/memcached/memcached-127/libmemcached-0.49/config/missing --run automake-1.11
+AUTOCONF = ${SHELL} /home/vagrant/memcached-127/libmemcached-0.49/config/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/vagrant/memcached-127/libmemcached-0.49/config/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/vagrant/memcached-127/libmemcached-0.49/config/missing --run automake-1.11
 AWK = gawk
 BETTER_MALLOC_LIBS = 
 BOOSTSKIP_WARNINGS = 
@@ -723,7 +723,7 @@ LCOV = echo lcov not found
 LCOV_GENHTML = echo genhtml not found
 LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS = 
-LEX = flex
+LEX = :
 LIBC_P = 
 LIBEVENT = -levent
 LIBEVENT_PREFIX = 
@@ -745,7 +745,7 @@ LTLIBINNODB =
 LTLIBOBJS = 
 LTLIBSASL = 
 LTLIBSASL2 = 
-MAKEINFO = ${SHELL} /home/vagrant/memcached/memcached-127/libmemcached-0.49/config/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/vagrant/memcached-127/libmemcached-0.49/config/missing --run makeinfo
 MEMCACHED_LIBRARY_VERSION = 7:0:0
 MEMCACHED_PROTOCAL_LIBRARY_VERSION = 0:0:0
 MEMCACHED_UTIL_LIBRARY_VERSION = 2:0:0
@@ -790,7 +790,7 @@ RANLIB = ranlib
 SED = /bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
-SPHINXBUILD = sphinx-build
+SPHINXBUILD = :
 SPHINX_WARNINGS = 
 STRIP = strip
 TARGET_FREEBSD = 
@@ -799,11 +799,11 @@ TARGET_OSX =
 TARGET_SOLARIS = 
 TARGET_WINDOWS = 
 VERSION = 0.49
-YACC = bison
-abs_builddir = /home/vagrant/memcached/memcached-127/libmemcached-0.49
-abs_srcdir = /home/vagrant/memcached/memcached-127/libmemcached-0.49
-abs_top_builddir = /home/vagrant/memcached/memcached-127/libmemcached-0.49
-abs_top_srcdir = /home/vagrant/memcached/memcached-127/libmemcached-0.49
+YACC = :
+abs_builddir = /home/vagrant/memcached-127/libmemcached-0.49
+abs_srcdir = /home/vagrant/memcached-127/libmemcached-0.49
+abs_top_builddir = /home/vagrant/memcached-127/libmemcached-0.49
+abs_top_srcdir = /home/vagrant/memcached-127/libmemcached-0.49
 ac_ct_CC = gcc
 ac_ct_CXX = g++
 ac_ct_DUMPBIN = 
@@ -833,7 +833,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/vagrant/memcached/memcached-127/libmemcached-0.49/config/install-sh
+install_sh = ${SHELL} /home/vagrant/memcached-127/libmemcached-0.49/config/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -3455,7 +3455,7 @@ maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
 	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
-#html-local:
+html-local:
 clean: clean-am
 
 clean-am: clean-binPROGRAMS clean-checkPROGRAMS clean-generic \
@@ -3807,117 +3807,117 @@ hudson-valgrind: tests/testapp
 
 .PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest
 
-sphinx-help:
-	@echo "Please use \`make <target>' where <target> is one of"
-	@echo "  html       to make standalone HTML files"
-	@echo "  dirhtml    to make HTML files named index.html in directories"
-	@echo "  singlehtml to make a single large HTML file"
-	@echo "  pickle     to make pickle files"
-	@echo "  json       to make JSON files"
-	@echo "  htmlhelp   to make HTML files and a HTML help project"
-	@echo "  qthelp     to make HTML files and a qthelp project"
-	@echo "  devhelp    to make HTML files and a Devhelp project"
-	@echo "  epub       to make an epub"
-	@echo "  latex      to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
-	@echo "  latexpdf   to make LaTeX files and run them through pdflatex"
-	@echo "  text       to make text files"
-	@echo "  man        to make manual pages"
-	@echo "  changes    to make an overview of all changed/added/deprecated items"
-	@echo "  linkcheck  to check all external links for integrity"
-	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
+#sphinx-help:
+#	@echo "Please use \`make <target>' where <target> is one of"
+#	@echo "  html       to make standalone HTML files"
+#	@echo "  dirhtml    to make HTML files named index.html in directories"
+#	@echo "  singlehtml to make a single large HTML file"
+#	@echo "  pickle     to make pickle files"
+#	@echo "  json       to make JSON files"
+#	@echo "  htmlhelp   to make HTML files and a HTML help project"
+#	@echo "  qthelp     to make HTML files and a qthelp project"
+#	@echo "  devhelp    to make HTML files and a Devhelp project"
+#	@echo "  epub       to make an epub"
+#	@echo "  latex      to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
+#	@echo "  latexpdf   to make LaTeX files and run them through pdflatex"
+#	@echo "  text       to make text files"
+#	@echo "  man        to make manual pages"
+#	@echo "  changes    to make an overview of all changed/added/deprecated items"
+#	@echo "  linkcheck  to check all external links for integrity"
+#	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 
-html-local:
-	PYTHONPATH=${top_srcdir}/docs $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/html
-	@echo
-	@echo "Build finished. The HTML pages are in $(SPHINX_BUILDDIR)/html."
+#html-local:
+#	PYTHONPATH=${top_srcdir}/docs $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/html
+#	@echo
+#	@echo "Build finished. The HTML pages are in $(SPHINX_BUILDDIR)/html."
 
-dirhtml:
-	PYTHONPATH=${top_srcdir}/docs $(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/dirhtml
-	@echo
-	@echo "Build finished. The HTML pages are in $(SPHINX_BUILDDIR)/dirhtml."
+#dirhtml:
+#	PYTHONPATH=${top_srcdir}/docs $(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/dirhtml
+#	@echo
+#	@echo "Build finished. The HTML pages are in $(SPHINX_BUILDDIR)/dirhtml."
 
-singlehtml:
-	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/singlehtml
-	@echo
-	@echo "Build finished. The HTML page is in $(SPHINX_BUILDDIR)/singlehtml."
+#singlehtml:
+#	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/singlehtml
+#	@echo
+#	@echo "Build finished. The HTML page is in $(SPHINX_BUILDDIR)/singlehtml."
 
-pickle:
-	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/pickle
-	@echo
-	@echo "Build finished; now you can process the pickle files."
+#pickle:
+#	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/pickle
+#	@echo
+#	@echo "Build finished; now you can process the pickle files."
 
-json:
-	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b json $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/json
-	@echo
-	@echo "Build finished; now you can process the JSON files."
+#json:
+#	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b json $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/json
+#	@echo
+#	@echo "Build finished; now you can process the JSON files."
 
-htmlhelp:
-	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/htmlhelp
-	@echo
-	@echo "Build finished; now you can run HTML Help Workshop with the" \
-	      ".hhp project file in $(SPHINX_BUILDDIR)/htmlhelp."
+#htmlhelp:
+#	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/htmlhelp
+#	@echo
+#	@echo "Build finished; now you can run HTML Help Workshop with the" \
+#	      ".hhp project file in $(SPHINX_BUILDDIR)/htmlhelp."
 
-qthelp:
-	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b qthelp $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/qthelp
-	@echo
-	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
-	      ".qhcp project file in $(SPHINX_BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(SPHINX_BUILDDIR)/qthelp/Libmemcached.qhcp"
-	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(SPHINX_BUILDDIR)/qthelp/Libmemcached.qhc"
+#qthelp:
+#	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b qthelp $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/qthelp
+#	@echo
+#	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
+#	      ".qhcp project file in $(SPHINX_BUILDDIR)/qthelp, like this:"
+#	@echo "# qcollectiongenerator $(SPHINX_BUILDDIR)/qthelp/Libmemcached.qhcp"
+#	@echo "To view the help file:"
+#	@echo "# assistant -collectionFile $(SPHINX_BUILDDIR)/qthelp/Libmemcached.qhc"
 
-devhelp:
-	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/devhelp
-	@echo
-	@echo "Build finished."
-	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/Libmemcached"
-	@echo "# ln -s $(SPHINX_BUILDDIR)/devhelp $$HOME/.local/share/devhelp/Libmemcached"
-	@echo "# devhelp"
+#devhelp:
+#	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/devhelp
+#	@echo
+#	@echo "Build finished."
+#	@echo "To view the help file:"
+#	@echo "# mkdir -p $$HOME/.local/share/devhelp/Libmemcached"
+#	@echo "# ln -s $(SPHINX_BUILDDIR)/devhelp $$HOME/.local/share/devhelp/Libmemcached"
+#	@echo "# devhelp"
 
-epub:
-	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/epub
-	@echo
-	@echo "Build finished. The epub file is in $(SPHINX_BUILDDIR)/epub."
+#epub:
+#	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/epub
+#	@echo
+#	@echo "Build finished. The epub file is in $(SPHINX_BUILDDIR)/epub."
 
-latex:
-	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/latex
-	@echo
-	@echo "Build finished; the LaTeX files are in $(SPHINX_BUILDDIR)/latex."
-	@echo "Run \`make' in that directory to run these through (pdf)latex" \
-	      "(use \`make latexpdf' here to do that automatically)."
+#latex:
+#	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/latex
+#	@echo
+#	@echo "Build finished; the LaTeX files are in $(SPHINX_BUILDDIR)/latex."
+#	@echo "Run \`make' in that directory to run these through (pdf)latex" \
+#	      "(use \`make latexpdf' here to do that automatically)."
 
-latexpdf: latex
-	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/latex
-	@echo "Running LaTeX files through pdflatex..."
-	make -C $(SPHINX_BUILDDIR)/latex all-pdf
-	@echo "pdflatex finished; the PDF files are in $(SPHINX_BUILDDIR)/latex."
+#latexpdf: latex
+#	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/latex
+#	@echo "Running LaTeX files through pdflatex..."
+#	make -C $(SPHINX_BUILDDIR)/latex all-pdf
+#	@echo "pdflatex finished; the PDF files are in $(SPHINX_BUILDDIR)/latex."
 
-text:
-	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b text $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/text
-	@echo
-	@echo "Build finished. The text files are in $(SPHINX_BUILDDIR)/text."
+#text:
+#	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b text $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/text
+#	@echo
+#	@echo "Build finished. The text files are in $(SPHINX_BUILDDIR)/text."
 
-man:
-	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b man $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/man
-	@echo
-	@echo "Build finished. The manual pages are in $(SPHINX_BUILDDIR)/man."
+#man:
+#	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b man $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/man
+#	@echo
+#	@echo "Build finished. The manual pages are in $(SPHINX_BUILDDIR)/man."
 
-changes:
-	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/changes
-	@echo
-	@echo "The overview file is in $(SPHINX_BUILDDIR)/changes."
+#changes:
+#	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/changes
+#	@echo
+#	@echo "The overview file is in $(SPHINX_BUILDDIR)/changes."
 
-linkcheck:
-	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/linkcheck
-	@echo
-	@echo "Link check complete; look for any errors in the above output " \
-	      "or in $(SPHINX_BUILDDIR)/linkcheck/output.txt."
+#linkcheck:
+#	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/linkcheck
+#	@echo
+#	@echo "Link check complete; look for any errors in the above output " \
+#	      "or in $(SPHINX_BUILDDIR)/linkcheck/output.txt."
 
-doctest:
-	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/doctest
-	@echo "Testing of doctests in the sources finished, look at the " \
-	      "results in $(SPHINX_BUILDDIR)/doctest/output.txt."
+#doctest:
+#	PYTHONPATH=${top_srcdir}/docs  $(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(SPHINX_BUILDDIR)/doctest
+#	@echo "Testing of doctests in the sources finished, look at the " \
+#	      "results in $(SPHINX_BUILDDIR)/doctest/output.txt."
 
 fedora:
 	rm -f ~/rpmbuild/RPMS/x86_64/libmemcached-$(VERSION)*.rpm
