@@ -1,0 +1,3 @@
+item_get        key:string
+item_remove     key:string
+add_delta       key:string delta:int
