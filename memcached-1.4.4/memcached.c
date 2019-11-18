@@ -2758,6 +2758,8 @@ static void process_update_command(conn *c, token_t *tokens, const size_t ntoken
     conn_set_state(c, conn_nread);
 }
 
+//// static pthread_mutex_t incr_lock = PTHREAD_MUTEX_INITIALIZER;
+
 static void process_arithmetic_command(conn *c, token_t *tokens, const size_t ntokens, const bool incr) {
     char temp[INCR_MAX_STORAGE_LEN];
     item *it;
@@ -2782,8 +2784,9 @@ static void process_arithmetic_command(conn *c, token_t *tokens, const size_t nt
         return;
     }
 
+    //// pthread_mutex_lock(&incr_lock);
     it = item_get(key, nkey);
-    // @checkpoint item_get pthread_self() key
+
     if (!it) {
         pthread_mutex_lock(&c->thread->stats.mutex);
         if (incr) {
@@ -2794,8 +2797,10 @@ static void process_arithmetic_command(conn *c, token_t *tokens, const size_t nt
         pthread_mutex_unlock(&c->thread->stats.mutex);
 
         out_string(c, "NOT_FOUND");
+        //// pthread_mutex_unlock(&incr_lock);
         return;
     }
+    // @checkpoint item_get pthread_self() key
 
     //sleep(1);
     switch(add_delta(c, it, incr, delta, temp)) {
@@ -2813,6 +2818,7 @@ static void process_arithmetic_command(conn *c, token_t *tokens, const size_t nt
 
     // @checkpoint item_release pthread_self() key
     item_remove(it);         /* release our reference */
+    //// pthread_mutex_unlock(&incr_lock);
 
 }
 
