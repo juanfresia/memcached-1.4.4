@@ -5417,7 +5417,7 @@ else
   le_found=no
   for ledir in $trylibeventdir "" $prefix /usr/local ; do
     LDFLAGS="$saved_LDFLAGS"
-    LIBS="$saved_LIBS -levent"
+    LIBS="$saved_LIBS -levent -lcoriolis"
 
     # Skip the directory if it isn't there.
     if test ! -z "$ledir" -a ! -d "$ledir" ; then
@@ -5513,7 +5513,7 @@ $as_echo "$as_me: error: libevent is required.  You can get it from $LIBEVENT_UR
 fi
 { $as_echo "$as_me:$LINENO: result: $ac_cv_libevent_dir" >&5
 $as_echo "$ac_cv_libevent_dir" >&6; }
-LIBS="$LIBS -levent"
+LIBS="$LIBS -levent -lcoriolis"
 if test $ac_cv_libevent_dir != "(system)"; then
   if test -d "$ac_cv_libevent_dir/lib" ; then
     LDFLAGS="-L$ac_cv_libevent_dir/lib $LDFLAGS"
@@ -8555,7 +8555,8 @@ $debug ||
 if test -n "$CONFIG_FILES"; then
 
 
-ac_cr=''
+ac_cr='
+'
 ac_cs_awk_cr=`$AWK 'BEGIN { print "a\rb" }' </dev/null 2>/dev/null`
 if test "$ac_cs_awk_cr" = "a${ac_cr}b"; then
   ac_cs_awk_cr='\\r'

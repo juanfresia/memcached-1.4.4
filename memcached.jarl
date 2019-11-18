@@ -1,0 +1,6 @@
+# While a thread has an item, other thread cannot add_delta on it
+rule thread_cant_add_delta_if_other_thread_has_item
+for every t1, t2, k1, k2 with t1=t2, k1=k2:
+between item_get(t1, k1) and next item_release(t2, k2):
+    for any t3, k3, d with t3!=t1, k3=k1:
+    add_delta(t3, k3, d) must not happen

@@ -352,19 +352,19 @@ configure:5219: gcc -o conftest -g -O2 -pthread   conftest.c -lgcov   >&5
 configure:5226: $? = 0
 configure:5247: result: yes
 configure:5408: checking for libevent directory
-configure:5462: gcc -o conftest -g -O2 -pthread   conftest.c  -levent >&5
+configure:5462: gcc -o conftest -g -O2 -pthread   conftest.c  -levent -lcoriolis >&5
 configure:5469: $? = 0
 configure:5514: result: (system)
 configure:5533: checking for library containing socket
-configure:5574: gcc -o conftest -g -O2 -pthread   conftest.c  -levent >&5
+configure:5574: gcc -o conftest -g -O2 -pthread   conftest.c  -levent -lcoriolis >&5
 configure:5581: $? = 0
 configure:5612: result: none required
 configure:5620: checking for library containing gethostbyname
-configure:5661: gcc -o conftest -g -O2 -pthread   conftest.c  -levent >&5
+configure:5661: gcc -o conftest -g -O2 -pthread   conftest.c  -levent -lcoriolis >&5
 configure:5668: $? = 0
 configure:5699: result: none required
 configure:5707: checking for library containing umem_cache_create
-configure:5748: gcc -o conftest -g -O2 -pthread   conftest.c  -levent >&5
+configure:5748: gcc -o conftest -g -O2 -pthread   conftest.c  -levent -lcoriolis >&5
 /tmp/ccn5mchX.o: In function `main':
 /home/vagrant/memcached-127/memcached-1.4.4/conftest.c:31: undefined reference to `umem_cache_create'
 collect2: error: ld returned 1 exit status
@@ -404,7 +404,7 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:5748: gcc -o conftest -g -O2 -pthread   conftest.c -lumem   -levent >&5
+configure:5748: gcc -o conftest -g -O2 -pthread   conftest.c -lumem   -levent -lcoriolis >&5
 /usr/bin/ld: cannot find -lumem
 collect2: error: ld returned 1 exit status
 configure:5755: $? = 1
@@ -445,7 +445,7 @@ configure: failed program was:
 | }
 configure:5786: result: no
 configure:5794: checking for library containing gethugepagesizes
-configure:5835: gcc -o conftest -g -O2 -pthread   conftest.c  -levent >&5
+configure:5835: gcc -o conftest -g -O2 -pthread   conftest.c  -levent -lcoriolis >&5
 /tmp/ccIeAKl2.o: In function `main':
 /home/vagrant/memcached-127/memcached-1.4.4/conftest.c:31: undefined reference to `gethugepagesizes'
 collect2: error: ld returned 1 exit status
@@ -485,7 +485,7 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:5835: gcc -o conftest -g -O2 -pthread   conftest.c -lhugetlbfs   -levent >&5
+configure:5835: gcc -o conftest -g -O2 -pthread   conftest.c -lhugetlbfs   -levent -lcoriolis >&5
 /usr/bin/ld: cannot find -lhugetlbfs
 collect2: error: ld returned 1 exit status
 configure:5842: $? = 1
@@ -615,7 +615,7 @@ configure:6488: gcc -c -g -O2 -pthread  conftest.c >&5
 configure:6495: $? = 0
 configure:6515: result: yes
 configure:6528: checking for endianness
-configure:6568: gcc -o conftest -g -O2 -pthread   conftest.c  -levent >&5
+configure:6568: gcc -o conftest -g -O2 -pthread   conftest.c  -levent -lcoriolis >&5
 conftest.c: In function 'main':
 conftest.c:29:9: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
          exit(*c == 1);
@@ -663,7 +663,7 @@ configure: failed program was:
 | 
 configure:6604: result: little
 configure:6625: checking for htonll
-configure:6668: gcc -o conftest -g -O2 -pthread   conftest.c  -levent >&5
+configure:6668: gcc -o conftest -g -O2 -pthread   conftest.c  -levent -lcoriolis >&5
 conftest.c:29:23: warning: extra tokens at end of #include directive
  #include <inttypes.h> */
                        ^
@@ -720,15 +720,15 @@ configure: failed program was:
 | 
 configure:6704: result: no
 configure:6708: checking for library containing pthread_create
-configure:6749: gcc -o conftest -g -O2 -pthread   conftest.c  -levent >&5
+configure:6749: gcc -o conftest -g -O2 -pthread   conftest.c  -levent -lcoriolis >&5
 configure:6756: $? = 0
 configure:6787: result: none required
 configure:6805: checking for mlockall
-configure:6861: gcc -o conftest -g -O2 -pthread   conftest.c  -levent >&5
+configure:6861: gcc -o conftest -g -O2 -pthread   conftest.c  -levent -lcoriolis >&5
 configure:6868: $? = 0
 configure:6890: result: yes
 configure:6906: checking for getpagesizes
-configure:6962: gcc -o conftest -g -O2 -pthread   conftest.c  -levent >&5
+configure:6962: gcc -o conftest -g -O2 -pthread   conftest.c  -levent -lcoriolis >&5
 /tmp/cciIUWCy.o: In function `main':
 /home/vagrant/memcached-127/memcached-1.4.4/conftest.c:59: undefined reference to `getpagesizes'
 collect2: error: ld returned 1 exit status
@@ -798,7 +798,7 @@ configure: failed program was:
 | }
 configure:6991: result: no
 configure:7007: checking for memcntl
-configure:7063: gcc -o conftest -g -O2 -pthread   conftest.c  -levent >&5
+configure:7063: gcc -o conftest -g -O2 -pthread   conftest.c  -levent -lcoriolis >&5
 /tmp/ccZiW6EB.o: In function `main':
 /home/vagrant/memcached-127/memcached-1.4.4/conftest.c:59: undefined reference to `memcntl'
 collect2: error: ld returned 1 exit status
@@ -868,17 +868,17 @@ configure: failed program was:
 | }
 configure:7092: result: no
 configure:7108: checking for sigignore
-configure:7164: gcc -o conftest -g -O2 -pthread   conftest.c  -levent >&5
+configure:7164: gcc -o conftest -g -O2 -pthread   conftest.c  -levent -lcoriolis >&5
 configure:7171: $? = 0
 configure:7193: result: yes
 configure:7208: checking for alignment
-configure:7253: gcc -o conftest -g -O2 -pthread   conftest.c  -levent >&5
+configure:7253: gcc -o conftest -g -O2 -pthread   conftest.c  -levent -lcoriolis >&5
 configure:7257: $? = 0
 configure:7263: ./conftest
 configure:7267: $? = 0
 configure:7289: result: none
 configure:7304: checking for setppriv
-configure:7360: gcc -o conftest -g -O2 -pthread   conftest.c  -levent >&5
+configure:7360: gcc -o conftest -g -O2 -pthread   conftest.c  -levent -lcoriolis >&5
 /tmp/cc9DmEUz.o: In function `main':
 /home/vagrant/memcached-127/memcached-1.4.4/conftest.c:60: undefined reference to `setppriv'
 collect2: error: ld returned 1 exit status
@@ -1199,7 +1199,7 @@ INSTALL_SCRIPT='${INSTALL}'
 INSTALL_STRIP_PROGRAM='$(install_sh) -c -s'
 LDFLAGS=''
 LIBOBJS=''
-LIBS=' -levent'
+LIBS=' -levent -lcoriolis'
 LTLIBOBJS=''
 MAKEINFO='${SHELL} /home/vagrant/memcached-127/memcached-1.4.4/missing --run makeinfo'
 MKDIR_P='/bin/mkdir -p'

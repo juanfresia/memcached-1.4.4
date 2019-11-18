@@ -2783,7 +2783,7 @@ static void process_arithmetic_command(conn *c, token_t *tokens, const size_t nt
     }
 
     it = item_get(key, nkey);
-    // @checkpoint item_get key
+    // @checkpoint item_get pthread_self() key
     if (!it) {
         pthread_mutex_lock(&c->thread->stats.mutex);
         if (incr) {
@@ -2797,10 +2797,11 @@ static void process_arithmetic_command(conn *c, token_t *tokens, const size_t nt
         return;
     }
 
-    // sleep(1);
+    //sleep(1);
     switch(add_delta(c, it, incr, delta, temp)) {
     case OK:
         out_string(c, temp);
+        // @checkpoint add_delta pthread_self() key delta
         break;
     case NON_NUMERIC:
         out_string(c, "CLIENT_ERROR cannot increment or decrement non-numeric value");
@@ -2809,9 +2810,10 @@ static void process_arithmetic_command(conn *c, token_t *tokens, const size_t nt
         out_string(c, "SERVER_ERROR out of memory");
         break;
     }
-    // @checkpoint add_delta key delta
+
+    // @checkpoint item_release pthread_self() key
     item_remove(it);         /* release our reference */
-    // @checkpoint item_remove key
+
 }
 
 /*

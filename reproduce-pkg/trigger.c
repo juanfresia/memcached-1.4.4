@@ -105,8 +105,8 @@ int main(int argc, char* argv[])
 
 		memcached_free(st);
 
-                if (g_threads * g_loop * g_step != atoi(value))
-			assert(0);
+                /*if (g_threads * g_loop * g_step != atoi(value))
+			assert(0);*/
 	}
 
 	return 0;

@@ -1667,21 +1667,21 @@ configure:19313: result: yes
 configure:19320: checking for shared library run path origin
 configure:19333: result: done
 configure:19864: checking for libevent
-configure:19893: gcc -std=gnu99 -o conftest    conftest.c  -levent >&5
+configure:19893: gcc -std=gnu99 -o conftest    conftest.c  -levent -lcoriolis >&5
 configure:19893: $? = 0
 configure:19903: result: yes
 configure:19910: checking how to link with libevent
-configure:19912: result: -levent
+configure:19912: result: -levent -lcoriolis
 configure:19944: checking for event_base_new
-configure:19944: gcc -std=gnu99 -o conftest    conftest.c  -levent >&5
+configure:19944: gcc -std=gnu99 -o conftest    conftest.c  -levent -lcoriolis >&5
 configure:19944: $? = 0
 configure:19944: result: yes
 configure:19955: checking for event_base_free
-configure:19955: gcc -std=gnu99 -o conftest    conftest.c  -levent >&5
+configure:19955: gcc -std=gnu99 -o conftest    conftest.c  -levent -lcoriolis >&5
 configure:19955: $? = 0
 configure:19955: result: yes
 configure:19966: checking for event_base_get_method
-configure:19966: gcc -std=gnu99 -o conftest    conftest.c  -levent >&5
+configure:19966: gcc -std=gnu99 -o conftest    conftest.c  -levent -lcoriolis >&5
 configure:19966: $? = 0
 configure:19966: result: yes
 configure:20150: checking for the pthreads library -lpthreads
@@ -4792,7 +4792,7 @@ LD='/usr/bin/ld -m elf_x86_64'
 LDFLAGS=''
 LEX=':'
 LIBC_P=''
-LIBEVENT='-levent'
+LIBEVENT='-levent -lcoriolis'
 LIBEVENT_PREFIX=''
 LIBINNODB=''
 LIBINNODB_PREFIX=''
@@ -4807,7 +4807,7 @@ LIBSASL_PREFIX=''
 LIBTOOL='$(SHELL) $(top_builddir)/libtool'
 LIPO=''
 LN_S='ln -s'
-LTLIBEVENT='-levent'
+LTLIBEVENT='-levent -lcoriolis'
 LTLIBINNODB=''
 LTLIBOBJS=''
 LTLIBSASL2=''
